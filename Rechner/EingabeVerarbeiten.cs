@@ -29,7 +29,7 @@ namespace Rechner
         private bool AnzeigeE10 = false;            // Wurde die Zahl in der Eingabe bereits gewandelt, ist keine erneute Wandlung nötig.
         private bool folgeAktion = false;           // wird benötigt um mit dem vorherigen Rechenergebnis weiter zu rechnen.
         private bool prozentFolgeAktion = false;    // wird benötigt um Prozente zu ermitteln.
-        private bool buttonTtext_2 = false;       // wird zum Ändern der Tastenfunktionen benötigt..
+        private bool winkelUmkehr = false;          // wird zum Ändern der Tastenfunktionen benötigt..
         //---------------------------------------------------------------------------------------------------------------------
         private int prioIndex;
         private int[] prio = new int[50];           //50 Zeichen Maximum sollten mit Sicherheit ausreichen.
@@ -139,8 +139,9 @@ namespace Rechner
             return;
         }
 
-        public void ButtonVerarbeitung(string eingabe)
-        {   //setzt den Button_Click in ein Zeichen um.
+        public void ButtonVerarbeitung(string eingabe, bool winkelFunktion)
+        {   
+            winkelUmkehr = winkelFunktion;
             switch (eingabe)
             {
                 case "BtnPI":
@@ -613,7 +614,7 @@ namespace Rechner
 
         private void BtnSin_Klick()
         {
-            if (buttonTtext_2)
+            if (winkelUmkehr)
             {
                 if (!AnzeigeIstZahl)
                 { if (!Umwandlung("BtnSin")) { return; } }
@@ -646,7 +647,7 @@ namespace Rechner
 
         private void BtnCos_Klick()
         {
-            if (buttonTtext_2)
+            if (winkelUmkehr)
             {
                 if (!AnzeigeIstZahl)
                 {
@@ -679,7 +680,7 @@ namespace Rechner
 
         private void BtnTan_Klick()
         {
-            if (buttonTtext_2)
+            if (winkelUmkehr)
             {
                 if (!AnzeigeIstZahl)
                 {

@@ -13,7 +13,7 @@ namespace Rechner
     public partial class Form1 : Form
     {
         EingabeVerarbeiten verarbeitung = new EingabeVerarbeiten();
-        bool buttonTtext_2 = false;       // wird zum Ändern der Tastenfunktionen sin, cos und tan benötigt..
+        bool winkelFunktionen = false;       // wird zum Ändern der Tastenfunktionen sin, cos und tan benötigt..
 
         public Form1()
         {
@@ -90,7 +90,7 @@ namespace Rechner
         {
             // https://msdn.microsoft.com/de-de/library/system.windows.forms.button(v=vs.110).aspx
             Button ziffer = sender as Button;
-            verarbeitung.ButtonVerarbeitung(ziffer.Name);
+            verarbeitung.ButtonVerarbeitung(ziffer.Name, winkelFunktionen);
             UebernahmeVariablen();
         }
 
@@ -105,19 +105,19 @@ namespace Rechner
 
         private void BtnFunktionsaenderung_Click(object sender, EventArgs e)
         {
-            if (buttonTtext_2)
+            if (winkelFunktionen)
             {
                 BtnSin.Text = "sin";
                 BtnCos.Text = "cos";
                 BtnTan.Text = "tan";
-                buttonTtext_2 = false;
+                winkelFunktionen = false;
             }
             else
             {
                 BtnSin.Text = "sin-1";
                 BtnCos.Text = "cos-1";
                 BtnTan.Text = "tan-1";
-                buttonTtext_2 = true;
+                winkelFunktionen = true;
             }
         }
     }
