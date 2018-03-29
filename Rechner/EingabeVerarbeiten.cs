@@ -139,9 +139,9 @@ namespace Rechner
             return;
         }
 
-        public void ButtonVerarbeitung(string eingabe, bool winkelFunktion)
+        public void ButtonVerarbeitung(string eingabe, bool _winkelUmkehr)
         {   
-            winkelUmkehr = winkelFunktion;
+            winkelUmkehr = _winkelUmkehr;
             switch (eingabe)
             {
                 case "BtnPI":
@@ -242,8 +242,8 @@ namespace Rechner
             else if (firstChar)
             {
                 if (folgeAktion) { NormiereBerechnung(false); }
-                txtEingabeText = "";
-                if (prioIndex == 0) { txtEingabeText = ""; }
+                // txtEingabeText = "";
+                if (prioIndex == 0) { txtEingabeText = "0"; }
                 firstChar = false;
                 exponentSperre = false;
                 if (zeichen != '0')
@@ -722,7 +722,7 @@ namespace Rechner
             ArrEintragZeichen(klammerNR + 50);
             klammerNR += 1;
             txtFormelText += "(";
-            txtEingabeText = "0";
+            NormierungEingabe(true);
             sperreZahl = false;
             sperreRA1 = true;
             sperreRA2 = true;
@@ -740,7 +740,7 @@ namespace Rechner
                 //if (potenzAbfolge != 0) { return; }
                 return;
             }
-            if (sperreKLzu)
+            if (sperreKLzu || klammerNR == 0)
             {
                 MessageBox.Show("BtnKlammerZu\r\nKlammer \"Zu\" ist zurzeit gesperrt.");
                 return;
@@ -751,11 +751,10 @@ namespace Rechner
                 txtFormelText += zahlAnzeige.ToString("#,##0.#####");
                 ArrEintragZahl(zahlAnzeige);
             }
-            txtFormelText += ")";
-            if (klammerNR > 0) { klammerNR = klammerNR - 1; }
+            klammerNR = klammerNR - 1;
             ArrEintragZeichen(klammerNR + 50);
+            txtFormelText += ")";
             NormierungEingabe(true);
-            txtEingabeText = "0";
             sperreKLzu = false;
             if (klammerNR < 1) { sperreKLzu = true; }
             sperreZahl = true;

@@ -13,13 +13,14 @@ namespace Rechner
     public partial class Form1 : Form
     {
         EingabeVerarbeiten verarbeitung = new EingabeVerarbeiten();
-        bool winkelFunktionen = false;       // wird zum Ändern der Tastenfunktionen sin, cos und tan benötigt..
+        bool winkelUmkehr = false;       // wird zum Ändern der Tastenfunktionen sin, cos und tan benötigt..
 
         public Form1()
         {
             InitializeComponent();
-            this.KeyPreview = true;
-            this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
+            this.KeyPreview = true; //Wenn diese Eigenschaft auf "true"festgelegt wird, 
+                                    // erhält das Formular alle KeyPress, KeyDown, und KeyUp Ereignisse.
+            this.KeyPress += new KeyPressEventHandler(Form1_KeyPress); // aktiviert beim Ereignis KeyPress die Methode "Form1_KeyPress".
             this.TxtFormel.Multiline = true;
             this.TxtFormel.Size = new Size(274, 73);
             TxtFormel.Text = "";
@@ -90,7 +91,7 @@ namespace Rechner
         {
             // https://msdn.microsoft.com/de-de/library/system.windows.forms.button(v=vs.110).aspx
             Button ziffer = sender as Button;
-            verarbeitung.ButtonVerarbeitung(ziffer.Name, winkelFunktionen);
+            verarbeitung.ButtonVerarbeitung(ziffer.Name, winkelUmkehr);
             UebernahmeVariablen();
         }
 
@@ -105,19 +106,19 @@ namespace Rechner
 
         private void BtnFunktionsaenderung_Click(object sender, EventArgs e)
         {
-            if (winkelFunktionen)
+            if (winkelUmkehr)
             {
                 BtnSin.Text = "sin";
                 BtnCos.Text = "cos";
                 BtnTan.Text = "tan";
-                winkelFunktionen = false;
+                winkelUmkehr = false;
             }
             else
             {
                 BtnSin.Text = "sin-1";
                 BtnCos.Text = "cos-1";
                 BtnTan.Text = "tan-1";
-                winkelFunktionen = true;
+                winkelUmkehr = true;
             }
         }
     }
