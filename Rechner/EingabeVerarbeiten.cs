@@ -307,7 +307,7 @@ namespace Rechner
 
         private void BtnExp_Klick()
         {
-            MessageBox.Show("Funktion Exponent ist noch nicht implementiert.");
+            MessageBox.Show("Funktion \"Exp\" = ^10 ist noch nicht implementiert.");
         }
 
         private void BtnPlusMinus_Klick()
@@ -630,10 +630,8 @@ namespace Rechner
                     zahlAnzeige == 180 || zahlAnzeige == 360)
                 {
                     if (zahlAnzeige == 90) { txtEingabeText = "1"; zahlAnzeige = 1; }
-                    if (zahlAnzeige == 270) { txtEingabeText = "1"; zahlAnzeige = -1; }
+                    if (zahlAnzeige == 270) { txtEingabeText = "-1"; zahlAnzeige = -1; }
                     if (zahlAnzeige == 180 || zahlAnzeige == 360) { txtEingabeText = "0"; zahlAnzeige = 0; }
-
-                    txtEingabeText = "0";
                 }
                 else
                 {
@@ -665,7 +663,7 @@ namespace Rechner
                     zahlAnzeige == 180 || zahlAnzeige == 360)
                 {
                     if (zahlAnzeige == 90 || zahlAnzeige == 270) { txtEingabeText = "0"; zahlAnzeige = 0; }
-                    if (zahlAnzeige == 180) { txtEingabeText = "1"; zahlAnzeige = -1; }
+                    if (zahlAnzeige == 180) { txtEingabeText = "-1"; zahlAnzeige = -1; }
                     if (zahlAnzeige == 360) { txtEingabeText = "1"; zahlAnzeige = 1; }
                 }
                 else
@@ -832,6 +830,13 @@ namespace Rechner
             zahlAnzeige = memory;
             AnzeigeIstZahl = true;
             txtEingabeText = memory.ToString("#,##0.#####");
+            sperreZahl = false;
+            sperreRA1 = false;
+            sperreRA2 = false;
+            sperreKLauf = true;
+            sperreKLzu = false;
+            sperreBerechnung = false;
+            sperreSofortBerechnung = false;
         }
 
         private void BtnMC_Klick()

@@ -349,7 +349,7 @@
             // BtnMC
             // 
             this.BtnMC.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMC.Location = new System.Drawing.Point(40, 135);
+            this.BtnMC.Location = new System.Drawing.Point(125, 135);
             this.BtnMC.Name = "BtnMC";
             this.BtnMC.Size = new System.Drawing.Size(39, 23);
             this.BtnMC.TabIndex = 26;
@@ -359,7 +359,7 @@
             // BtnMR
             // 
             this.BtnMR.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMR.Location = new System.Drawing.Point(86, 135);
+            this.BtnMR.Location = new System.Drawing.Point(215, 135);
             this.BtnMR.Name = "BtnMR";
             this.BtnMR.Size = new System.Drawing.Size(39, 23);
             this.BtnMR.TabIndex = 27;
@@ -369,7 +369,7 @@
             // BtnMminus
             // 
             this.BtnMminus.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMminus.Location = new System.Drawing.Point(130, 135);
+            this.BtnMminus.Location = new System.Drawing.Point(35, 135);
             this.BtnMminus.Name = "BtnMminus";
             this.BtnMminus.Size = new System.Drawing.Size(39, 23);
             this.BtnMminus.TabIndex = 28;
@@ -379,7 +379,7 @@
             // BtnMplus
             // 
             this.BtnMplus.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMplus.Location = new System.Drawing.Point(174, 135);
+            this.BtnMplus.Location = new System.Drawing.Point(80, 135);
             this.BtnMplus.Name = "BtnMplus";
             this.BtnMplus.Size = new System.Drawing.Size(39, 23);
             this.BtnMplus.TabIndex = 29;
@@ -389,7 +389,7 @@
             // BtnMS
             // 
             this.BtnMS.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMS.Location = new System.Drawing.Point(217, 135);
+            this.BtnMS.Location = new System.Drawing.Point(170, 135);
             this.BtnMS.Name = "BtnMS";
             this.BtnMS.Size = new System.Drawing.Size(39, 23);
             this.BtnMS.TabIndex = 30;
